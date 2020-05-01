@@ -1,0 +1,106 @@
+{% extends 'main.html'%}
+
+{% load static %}
+
+{% block content %}
+
+<h2 align = center>World News</h2>
+
+
+<br>
+<div class = "row">
+  <div class = "col">
+    <div class="col-md">
+<div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+  <div class="card-header" align = center >Total Cases</div>
+  <div class="card-body">
+    <h5 class="card-title" align = center >{{globaldata.cases}}</h5>
+  </div>
+</div>
+</div>
+</div>
+<div class = "col">
+  <div class="col-md">
+<div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+  <div class="card-header" align = center >Today Cases</div>
+  <div class="card-body">
+    <h5 class="card-title" align = center>{{globaldata.todayCases}}</h5>
+  </div>
+</div>
+</div>
+</div>
+
+<div class = "col">
+  <div class="col-md">
+<div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+  <div class="card-header">Total Deaths</div>
+  <div class="card-body">
+    <h5 class="card-title">{{globaldata.deaths}}</h5>
+  </div>
+</div>
+</div>
+</div>
+
+<div class = "col">
+  <div class="col-md">
+<div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+  <div class="card-header" align = center>Today Deaths</div>
+  <div class="card-body">
+    <h5 class="card-title" align = center>{{globaldata.todayDeaths}}</h5>
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+<br>
+<br>
+
+<div class = "row">
+  <div class = "col">
+    <div class="col-md">
+<div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+  <div class="card-header" align = center >Total Recovered</div>
+  <div class="card-body">
+    <h5 class="card-title" align = center >{{globaldata.recovered}}</h5>
+  </div>
+</div>
+</div>
+</div>
+<div class = "col">
+  <div class="col-md">
+<div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+  <div class="card-header" align = center >Critical</div>
+  <div class="card-body">
+    <h5 class="card-title" align = center>{{globaldata.critical}}</h5>
+  </div>
+</div>
+</div>
+</div>
+
+<div class = "col">
+  <div class="col-md">
+<div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+  <div class="card-header" align = center >Active Cases</div>
+  <div class="card-body">
+    <h5 class="card-title" align = center >{{globaldata.active}}</h5>
+  </div>
+</div>
+</div>
+</div>
+
+<div class = "col">
+  <div class="col-md">
+<div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+  <div class="card-header" align = center>Affected Countries</div>
+  <div class="card-body">
+    <h5 class="card-title" align = center>{{globaldata.affectedCountries}}</h5>
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+{% endblock content %}
