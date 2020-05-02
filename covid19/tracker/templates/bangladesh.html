@@ -1,14 +1,6 @@
-{% extends 'main.html'%}
-
 {% load static %}
-
-{% block content %}
-
-{% include 'bangladesh.html' %}
-
 <br>
-
-<h1 align = center>"WORLD NEWS"</h1>
+<h1 align = center>"BANGLADESH NEWS"</h1>
 
 
 <br>
@@ -18,7 +10,7 @@
 <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
   <div class="card-header" align = center >Total Cases</div>
   <div class="card-body">
-    <h5 class="card-title" align = center >{{globaldata.cases}}</h5>
+    <h5 class="card-title" align = center >{{bangladesh.cases}}</h5>
   </div>
 </div>
 </div>
@@ -28,7 +20,11 @@
 <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
   <div class="card-header" align = center >Today Cases</div>
   <div class="card-body">
-    <h5 class="card-title" align = center>{{globaldata.todayCases}}</h5>
+    {% if bangladesh.todayCases != 0 %}
+    <h5 class="card-title" align = center>{{bangladesh.todayCases}}</h5>
+    {% else %}
+    <h5 class="card-title" align = center>Not Briefed Yet</h5>
+    {% endif %}
   </div>
 </div>
 </div>
@@ -37,9 +33,9 @@
 <div class = "col">
   <div class="col-md">
 <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
-  <div class="card-header">Total Deaths</div>
+  <div class="card-header" align = center>Total Deaths</div>
   <div class="card-body">
-    <h5 class="card-title">{{globaldata.deaths}}</h5>
+    <h5 class="card-title" align = center >{{bangladesh.deaths}}</h5>
   </div>
 </div>
 </div>
@@ -50,7 +46,11 @@
 <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
   <div class="card-header" align = center>Today Deaths</div>
   <div class="card-body">
-    <h5 class="card-title" align = center>{{globaldata.todayDeaths}}</h5>
+    {% if bangladesh.todayCases != 0 %}
+    <h5 class="card-title" align = center>{{bangladesh.todayDeaths}}</h5>
+    {% else %}
+    <h5 class="card-title" align = center>Not Briefed Yet</h5>
+    {% endif %}
   </div>
 </div>
 </div>
@@ -68,7 +68,7 @@
 <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
   <div class="card-header" align = center >Total Recovered</div>
   <div class="card-body">
-    <h5 class="card-title" align = center >{{globaldata.recovered}}</h5>
+    <h5 class="card-title" align = center >{{bangladesh.recovered}}</h5>
   </div>
 </div>
 </div>
@@ -76,9 +76,9 @@
 <div class = "col">
   <div class="col-md">
 <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-  <div class="card-header" align = center >Critical</div>
+  <div class="card-header" align = center >Yesterday Cases</div>
   <div class="card-body">
-    <h5 class="card-title" align = center>{{globaldata.critical}}</h5>
+    <h5 class="card-title" align = center>{{bdyes.todayCases}}</h5>
   </div>
 </div>
 </div>
@@ -87,9 +87,9 @@
 <div class = "col">
   <div class="col-md">
 <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-  <div class="card-header" align = center >Active Cases</div>
+  <div class="card-header" align = center >Yesterday Deaths</div>
   <div class="card-body">
-    <h5 class="card-title" align = center >{{globaldata.active}}</h5>
+    <h5 class="card-title" align = center >{{bdyes.todayDeaths}}</h5>
   </div>
 </div>
 </div>
@@ -98,13 +98,12 @@
 <div class = "col">
   <div class="col-md">
 <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
-  <div class="card-header" align = center>Affected Countries</div>
+  <div class="card-header" align = center>Total Tests</div>
   <div class="card-body">
-    <h5 class="card-title" align = center>{{globaldata.affectedCountries}}</h5>
+    <h5 class="card-title" align = center>{{bangladesh.tests}}</h5>
   </div>
 </div>
 </div>
 </div>
 
 </div>
-{% endblock content %}

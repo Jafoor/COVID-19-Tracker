@@ -6,8 +6,15 @@ import requests
 
 def home(request):
     link = requests.get('https://corona.lmao.ninja/v2/all')
+    link1 = requests.get('https://corona.lmao.ninja/v2/countries/BD')
+    link2 = requests.get('https://disease.sh/v2/countries/Bangladesh?yesterday=true&strict=true')
+    link1 = link1.json()
     link = link.json()
-    print(link)
+    link2 = link2.json()
+    print(link1)
+    print(link2)
     return render(request, 'deshboard.html', {
-        'globaldata':link
+        'globaldata':link,
+        'bangladesh':link1,
+        'bdyes':link2
     })
