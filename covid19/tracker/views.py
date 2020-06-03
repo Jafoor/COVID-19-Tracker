@@ -11,8 +11,8 @@ def home(request):
     link1 = link1.json()
     link = link.json()
     link2 = link2.json()
-    print(link1)
-    print(link2)
+    #print(link1)
+    #print(link2)
     return render(request, 'deshboard.html', {
         'globaldata':link,
         'bangladesh':link1,
